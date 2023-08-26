@@ -1,2 +1,2 @@
 # cellular-automata
-Cellular automata playground implemented based in processing library.
+Cellular automata playground implementation using processing library.
