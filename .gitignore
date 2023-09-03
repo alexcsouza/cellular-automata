@@ -205,5 +205,10 @@ out
 .history
 .ionide
 
+# Generated images
+*.jpeg
+*.jpg
+*.png
+
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,intellij+all,visualstudiocode,processing,maven
 

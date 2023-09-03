@@ -11,39 +11,39 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CellularAutomata extends PApplet {
-    public static final Integer CELL_SIZE = 1;
+    public static final Integer CELL_SIZE = 3;
 
-    public static final Integer CANVAS_WIDTH = 800;
+    public static final Integer CANVAS_WIDTH = 640;
 
-    public static final Integer CANVAS_HEIGHT = 800;
+    public static final Integer CANVAS_HEIGHT = 640;
 
     private List<Integer> ref = new ArrayList<>(
             Arrays.asList(
                     new Integer[]{
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0, 0, 0, 0,
@@ -61,49 +61,38 @@ public class CellularAutomata extends PApplet {
                             0, 0, 0, 0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0,
-                            0, 0, 0, 0, 0, 0, 0, 0
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0,
+//                            0, 0, 0, 0, 0, 0, 0, 0
                     }) );
 
-// rule 30
-//Integer[] rule = new Integer[]{ 0, 0, 0, 1, 1, 1, 1, 0 };
-
-// rule 90
-//Integer[] rule = new Integer[]{ 0, 1, 0, 1, 1, 0, 1, 0 };
-
-// rule 105
-//Integer[] rule = new Integer[]{ 0, 1, 1, 0, 1, 0, 0, 1 };
-
-// rule 110
-//Integer[] rule = new Integer[]{ 0, 1, 1, 0, 1, 1, 1, 0 };
-
-    // rule 150
-    private Integer[] rule = new Integer[]{ 1, 0, 0, 1, 0, 1, 1, 0 };
+    private Integer[] rule;
     private Grid grid;
     private ICellStyle cellStyle;
     private Integer currentLine = 1;
+
+    private Integer currentRule = 255;
 
     public void settings(){
         size(CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -113,9 +102,8 @@ public class CellularAutomata extends PApplet {
     public void setup(){
         grid = new Grid(this,ref.size(), ref.size());
         cellStyle = new SquareCellStyle(this);
-        translate(300, 200);
-        println(ref.size());
-
+        translate(100, 100);
+        rule = toRuleArray(currentRule);
         for(int i = 0; i < ref.size(); i++){
             createCell(i, 0, ref.get(i));
         }
@@ -125,17 +113,22 @@ public class CellularAutomata extends PApplet {
                 createCell(i, j, 0);
             }
         }
-
     }
 
     public void draw(){
-        println("Current Line: " + currentLine);
         if(currentLine == ref.size()) {
-            save("celular-automata.jpeg");
-            return; //<>//
+            currentLine = 1;
+            save(String.format("celular-automata-%s.jpeg", currentRule));
+            reset(++currentRule);
+
+            if(currentRule >= 500){
+                noLoop();
+                return;
+            }
+
         }
 
-        translate(300, 200);
+        translate(100, 100);
         for(int i = 0; i < ref.size(); i++){
 
             Boolean[] states = new Boolean[3];
@@ -203,14 +196,10 @@ public class CellularAutomata extends PApplet {
                 nextState = rule[7];
             }
 
-
+            System.out.println(String.valueOf(nextState));
             changeCellState(grid.getCell(i, currentLine), nextState);
-
-
         }
-
         currentLine++;
-
     }
 
     void createCell(Integer xpos, Integer ypos, Integer state){
@@ -224,4 +213,15 @@ public class CellularAutomata extends PApplet {
         cellStyle.drawCell(cell, CELL_SIZE);
     }
 
+    void reset(Integer nextRule){
+        rule = toRuleArray(nextRule);
+    }
+
+    Integer[] toRuleArray(Integer rule){
+        Integer[] bits = new Integer[8];
+        for (int i = 7; i >= 0; i--) {
+            bits[i] = (rule & (1 << i)) != 0 ? 1 : 0;
+        }
+        return bits;
+    }
 }

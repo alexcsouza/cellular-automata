@@ -11,7 +11,7 @@ public class SquareCellStyle implements ICellStyle{
     this.pa = pa;
   }
   public void drawCell(Cell cell, int size){
-    this.pa.noStroke();
+    //this.pa.noStroke();
     if(cell.getState() == 1){
       this.pa.fill(0);
     }else{
