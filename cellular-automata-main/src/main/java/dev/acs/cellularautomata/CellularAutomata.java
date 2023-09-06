@@ -11,11 +11,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CellularAutomata extends PApplet {
-    public static final Integer CELL_SIZE = 3;
+    public static final Integer CELL_SIZE = 5;
 
-    public static final Integer CANVAS_WIDTH = 640;
+    public static final Integer CANVAS_WIDTH = 800;
 
-    public static final Integer CANVAS_HEIGHT = 640;
+    public static final Integer CANVAS_HEIGHT = 800;
 
     private List<Integer> ref = new ArrayList<>(
             Arrays.asList(
@@ -92,7 +92,7 @@ public class CellularAutomata extends PApplet {
     private ICellStyle cellStyle;
     private Integer currentLine = 1;
 
-    private Integer currentRule = 255;
+    private Integer currentRule = 1;
 
     public void settings(){
         size(CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -102,7 +102,7 @@ public class CellularAutomata extends PApplet {
     public void setup(){
         grid = new Grid(this,ref.size(), ref.size());
         cellStyle = new SquareCellStyle(this);
-        translate(100, 100);
+        translate(100, 20);
         rule = toRuleArray(currentRule);
         for(int i = 0; i < ref.size(); i++){
             createCell(i, 0, ref.get(i));
@@ -121,14 +121,14 @@ public class CellularAutomata extends PApplet {
             save(String.format("celular-automata-%s.jpeg", currentRule));
             reset(++currentRule);
 
-            if(currentRule >= 500){
+            if(currentRule >= 1000){
                 noLoop();
                 return;
             }
 
         }
 
-        translate(100, 100);
+        translate(100, 20);
         for(int i = 0; i < ref.size(); i++){
 
             Boolean[] states = new Boolean[3];
